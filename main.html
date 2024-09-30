@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Андрей и Илья</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(
+                rgba(255, 0, 0, 0.3),
+                rgba(0, 0, 255, 0.3),
+                rgba(255, 255, 0, 0.3)
+            ), url('flag.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        }
+        .container {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+        .container:hover {
+            transform: scale(1.12);
+        }
+        .column {
+            padding: 40px;
+            width: 350px;
+        }
+        .column:first-child {
+            border-right: 1px solid #ddd;
+        }
+        h1 {
+            color: #4a4a4a;
+            border-bottom: 2px solid #4a4a4a;
+            padding-bottom: 15px;
+            margin-top: 0;
+            text-align: center;
+            font-size: 2.2em;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+        tr {
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        td {
+            padding: 12px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        td:first-child {
+            font-weight: bold;
+            text-transform: capitalize;
+            border-radius: 8px 0 0 8px;
+            background-color: rgba(0, 0, 255, 0.15);
+        }
+        td:last-child {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 0 8px 8px 0;
+            background-color: rgba(255, 255, 0, 0.15);
+        }
+        tr:hover {
+            transform: translateX(5px);
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+        }
+        tr:hover td:first-child {
+            background-color: rgba(0, 0, 255, 0.25);
+        }
+        tr:hover td:last-child {
+            background-color: rgba(255, 255, 0, 0.25);
+        }
+        .result {
+            color: #007bff;
+        }
+        .friend-section {
+            margin-top: 30px;
+        }
+        .question {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .answer {
+            font-size: 2em;
+            font-weight: bold;
+            color: #dc3545;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        .footer img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h1>Андрей</h1>
+            <table>
+                <tr>
+                    <td>Мэтчей</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Скам/Онлифанс</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Взял инсту</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Ghosted</td>
+                    <td>1.5</td>
+                </tr>
+                <tr>
+                    <td>Свиданий</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Результат</td>
+                    <td class="result">0 из 2</td>
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <h1>Илья</h1>
+            <div class="friend-section">
+                <div class="question">Ебался?</div>
+                <div class="answer">Нет</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="jubie.png" alt="Жуби-Генг">
+        <span>При поддержке юридического департамента заключения споров Жуби-Генг</span>
+    </div>
+</body>
+</html>
